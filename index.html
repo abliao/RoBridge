@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="PIVOT-R: Primitive-Driven Waypoint-Aware World Model for Robotic Manipulation">
+        content="RoBridge: A Hierarchical Architecture Bridging Cognition and Execution for General Robotic Manipulation">
   <meta name="keywords" content="imitation learning mobile manipulation, robots ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PIVOT-R: Primitive-Driven Waypoint-Aware World Model for Robotic Manipulation</title>
+  <title>RoBridge: A Hierarchical Architecture Bridging Cognition and Execution for General Robotic Manipulation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -44,39 +44,37 @@
 
 <section class="hero">
   <div class="hero-body">
-    <h1 style="font-size: 55px; font-weight: bold; text-align: center;">PIVOT-R: Primitive-Driven Waypoint-Aware World Model <br> for Robotic Manipulation</h1>
+    <h1 style="font-size: 55px; font-weight: bold; text-align: center;">RoBridge: A Hierarchical Architecture Bridging Cognition and Execution <br> for General Robotic Manipulation</h1>
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <div class="is-size-5 publication-authors" style="padding-top: 10px;">
             <span class="author-block">
-              Kaidong Zhang<sup>1</sup><sup>&dagger;</sup>,
+              Kaidong Zhang<sup>1</sup>,
             </span>
             <span class="author-block">
-              Pengzhen Ren<sup>2</sup><sup>&dagger;</sup>,
+              Rongtao Xu<sup>2</sup>,
             </span>
             <span class="author-block">
-              Bingqian Lin<sup>1</sup>,
+              Pengzhen Ren<sup>3</sup>,
             </span>
             <span class="author-block">
-              Junfan Lin<sup>2</sup>,
+              Junfan Lin<sup>3</sup>,
             </span>
             <span class="author-block">
-              Shikui Ma<sup>3</sup>,
+              Hefeng Wu<sup>1</sup>,
             </span>
             <span class="author-block">
-              Hang Xu<sup>4</sup>,
+              Liang Lin<sup>13</sup><sup>*</sup>,
             </span>
             <span class="author-block">
-              Xiaodan Liang <sup>12</sup><sup>*</sup>
+              Xiaodan Liang <sup>123</sup><sup>*</sup>
             </span>
           </div>
           <br>
 
           <div class="is-size-5 publication-authors">
-            <span class="font-size: 20px;"><sup>1</sup>Sun Yat-Sen University,<sup>2</sup>Peng Cheng Laboratory,<sup>3</sup>Dataa Robotics,<sup>4</sup>Huawei Noah's Ark Lab</span>
-            <br>
-            <span style="font-size: 20px;"><sup>&dagger;</sup>Equal Contribution</span>
+            <span class="font-size: 20px;"><sup>1</sup>Sun Yat-Sen University,<sup>2</sup>MBZUAI,<sup>3</sup>Peng Cheng Laboratory,</span>
             <br>
             <span style="font-size: 20px;"><sup>*</sup>Corresponding author</span>
           </div>
@@ -85,7 +83,7 @@
             <div class="publication-links">
               <!-- Arxiv Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2410.10394"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -95,7 +93,7 @@
               </span>
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2410.10394"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -105,7 +103,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/abliao/PIVOT-R"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -180,10 +178,7 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p style="font-size: 24px;">
-            Language-guided robotic manipulation is a challenging task that requires an embodied agent to follow abstract user instructions to accomplish various complex manipulation tasks. 
-            Previous work trivially fitting the data without revealing the relation between instruction and low-level executable actions, these models are prone to memorizing the surficial pattern of the data instead of acquiring the transferable knowledge, and thus are fragile to dynamic environment changes. 
-            To address this issue, we propose a <b>P</b>r<b>I</b>rmitive-dri<b>V</b>en wayp<b>O</b>in<b>T</b>-aware world model for <b>R</b>obotic manipulation (<b>PIVOT-R</b>) that focuses solely on the prediction of task-relevant waypoints.
-            Specifically, <b>PIVOT-R</b> consists of a Waypoint-aware World Model (WAWM) and a lightweight action prediction module. The former performs primitive action parsing and primitive-driven waypoint prediction, while the latter focuses on decoding low-level actions. Additionally, we also design an asynchronous hierarchical executor (AHE), which can use different execution frequencies for different modules of the model, thereby helping the model reduce computational redundancy and improve model execution efficiency. <br>
+            Operating robots in open-ended scenarios with diverse tasks is a crucial research and application direction in robotics. While recent progress in natural language processing and large multimodal models has enhanced robots' ability to understand complex instructions, robot manipulation still faces the procedural skill dilemma and the declarative skill dilemma in open environments. Existing methods often compromise cognitive and executive capabilities.  To address these challenges, in this paper, we propose RoBridge, a hierarchical intelligent architecture for general robotic manipulation. It consists of a high-level cognitive planner (HCP) based on a large-scale pre-trained vision-language model (VLM), an invariant operable representation (IOR) serving as a symbolic bridge, and a generalist embodied agent (GEA). RoBridge maintains the declarative skill of VLM and unleashes the procedural skill of reinforcement learning, effectively bridging the gap between cognition and execution. RoBridge demonstrates significant performance improvements over existing baselines, achieving a 75% success rate on new tasks and an 83% average success rate in sim-to-real generalization using only five real-world data samples per task. This work represents a significant step towards integrating cognitive reasoning with physical execution in robotic systems, offering a new paradigm for general robotic manipulation.
           </p>
         </div>
       </div>
@@ -196,7 +191,7 @@
         <h2 class="title is-1">Method</h2>
         <br>
         <div class="columns is-centered has-text-centered">
-          <img id="multi_methods" width="80%" src="static/images/multi_methods.png"/>
+          <img id="multi_methods" width="80%" src="static/images/Comparison_00.png"/>
         </div>
         <!-- <video poster="" id="overview" autoplay muted loop playsinline width="70%">
             <source src="static/videos/intro/overview.mp4"
@@ -204,24 +199,22 @@
         </video> -->
         <div class="content is-centered has-text-justified">
           <p  style="font-size: 24px;">
-            PIVOT-R is a primitive-driven waypoint-aware world model with asynchronous hierarchical executors. 
-            It only focuses on the prediction of waypoints related to the manipulation task, and it is easier to predict key nodes in the manipulation task than
-other methods. 
-            In addition, PIVOT-R sets different execution frequencies for different modules to have higher execution efficiency and lower redundancy.
+            Declarative skill methods (left) directly generate specific control commands in a formulaic way, such as determining trajectories by minimizing cost.
+           However, due to a lack of interaction experience with the physical world, the generated commands are often incorrect. 
+           Procedural skill methods (middle) forcibly transform a vision-language model (VLM) into a robotics model using a data-driven approach, but it is not effective in dealing with unseen situations. 
+           Our method, RoBridge(right), enables the VLM to generate physically intuitive representations as a symbolic bridge. This symbolic bridge is characterized by its invariance, allowing it to communicate with the underlying embodied agent in a universal manner. Meanwhile, the embodied agent continuously interacts with the physical world to gain continual skill aggregation, fully leveraging the strengths of both the VLM and reinforcement learning.
           </p>
         </div>
         <br>
         <div class="columns is-centered has-text-centered">
-            <img id="pipeline" width="80%" src="static/images/pipeline.png"/>
+            <img id="pipeline" width="80%" src="static/images/framework_00.png"/>
         </div>
         <div class="content is-centered has-text-justified">
           <p  style="font-size: 24px;">
-            It mainly consists of a waypoint-aware world model (WAWM) and an action prediction module, 
-            where two modules cooperate with each other through an asynchronous hierarchical executor (AHE). 
-            In WAWM, we first use pre-trained VLM to perform low-frequency primitive action parsing on user instructions and provide waypoint indications for the scene prediction
-            module. 
-            Then, the scene prediction module learns to model the world knowledge based on waypoints and manipulation trajectories. 
-            Finally, we use a lightweight action prediction module to perform high-frequency action prediction and execution.
+            RoBridge adopts a three-layer architecture, consisting of a high-level cognitive planner (HCP), an invariant operable representation (IOR), and a generalist embodied agent (GEA). 
+            For example, for the instruction ``Put the blocks into the corresponding shaped slots", HCP will first plan and split the task into multiple primitive actions. 
+            Then, combined with the APIs composed of the foundation model, it will give IOR, which mainly includes the masked depth of the first perspective, the mask of the third perspective, the type of action, and the constraints. 
+            IOR is updated by HCP at a low frequency and track-anything updates the mask at a high frequency. IOR is used as the input of GEA, and GEA performs specific actions until the task is completed.
           </p>
         </div>
       </div>
@@ -233,121 +226,102 @@ other methods.
       <div class="column is-four-fifths">
         <h2 class="title is-1">Real Robot Experiments</h2>
         <!-- <img id="robot_result" width="80%" src="static/images/real_robot.png"> -->
+        <div class="columns">
+          <img id="table2" width="70%" src="static/images/table2.png" style="display: block; margin-left: auto; margin-right: auto">
+        </div>
         <div class="content has-text-justified">
           <br>
           <p style="font-size: 24px;">
-          We conducted real-world experiments, where we set up three tasks: 
-          (i) "Pick up": pick up the correct object from the table. 
-          (ii) "Put on": Pick up the object and place it on the correct color block. 
-          (iii) "Push to": Push the object to the correct color block.  
-          We collected 400, 200, and 200 sets of demonstrations respectively. 
-          PIVOT-R achieved a 6% improvement over the best baseline.
           </p>
           <div class="columns is-centered has-text-centered">
-            <div class="container" style="display: flex; justify-content: center; flex-wrap: nowrap;">
+            <div style="flex: 1; margin: 0.5%; text-align: center;">
+              <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -2%;">
+                <source src="static/videos/pickup_00.mp4" type="video/mp4">
+              </video>
+              <p style="font-size: 16px;">pick up the blue block.</p>
+            </div>
+            <div style="flex: 1; margin: 0.5%; text-align: center;">
+              <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -1.5%;">
+                <source src="static/videos/sweep_00.mp4" type="video/mp4">
+              </video>
+              <p style="font-size: 16px;">Sweep the yellow block into pink stickers.</p>
+            </div>
+            <div style="flex: 1; margin: 0.5%; text-align: center;">
+              <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: 0.5%;">
+                <source src="static/videos/press_button_00.mp4" type="video/mp4">
+              </video>
+              <p style="font-size: 16px;">Press the button.</p>
+            </div>
+            <div style="flex: 1; margin: 0.5%; text-align: center;">
+              <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: 0.5%;">
+                <source src="static/videos/open_drawer_00.mp4" type="video/mp4">
+              </video>
+              <p style="font-size: 16px;">Open the drawer.</p>
+            </div>
+
+            <!-- <div class="container" style="display: flex; justify-content: center; flex-wrap: nowrap;">
               <div style="flex: 1; margin-right: 2%;">
-                <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -1%;">
-                  <source src="static/videos/push_coffee_to_pink_block.mp4" type="video/mp4">
+                <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -2%;">
+                  <source src="static/videos/pickup_00.mp4" type="video/mp4">
                 </video>
                 <p style="font-size: 20px;">Push coffee to pink block.</p>
               </div>
               <div style="flex: 1; margin-right: 2%;">
-                <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -0.5%;">
-                  <source src="static/videos/pick_up_the_juice_in the_front_row.mp4" type="video/mp4">
+                <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -1.5%;">
+                  <source src="static/videos/sweep_00.mp4" type="video/mp4">
                 </video>
                 <p style="font-size: 20px;">Pick up the juice in the front row.</p>
               </div>
               <div style="flex: 1;">
                 <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: 0.5%;">
-                  <source src="static/videos/pick_up_starbucks_and_put_it_on_yellow_block.mp4" type="video/mp4">
+                  <source src="static/videos/press_button_00.mp4" type="video/mp4">
                 </video>
                 <p style="font-size: 20px;">Pick up starbucks and put it on yellow block.</p>
               </div>
+              <div style="flex: 1;">
+                <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: 0.5%;">
+                  <source src="static/videos/open_drawer_00.mp4" type="video/mp4">
+                </video>
+                <p style="font-size: 20px;">Pick up starbucks and put it on yellow block.</p>
+              </div>
+            </div> -->
+          </div>
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-1">Real-World Long-horizon Experiment</h2>
+        <!-- <img id="calvin_env" width="70%" src="static/images/calvin_env.png" style="display: block; margin-left: auto; margin-right: auto"> -->
+        <div class="content has-text-justified">
+          <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div style="flex: 1; margin: 0.5%; text-align: center;">
+              <video poster="" autoplay controls muted loop playsinline width="70%" style="border-radius: 4%; position: relative; left: -1%;">
+                <source src="static/videos/assembly_00.mp4" type="video/mp4">
+              </video>
+              <p style="font-size: 20px;">Put the blocks into the corresponding shaped slots.</p>
+            </div>
+            <div class="columns" style="flex: 1; margin: 0.5%; text-align: center;">
+              <img id="table3" width="100%" src="static/images/table3.png" style="max-height: 80%; width: auto; margin-top: 20px; display: block; margin-left: auto; margin-right: 2%">
             </div>
           </div>
+          <br>
+      </div>
     </div>
 </section>
 
 <section class="section">
   <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-1">SeaWave Benchmark Experiments</h2>
-        <!-- <img id="calvin_env" width="70%" src="static/images/calvin_env.png" style="display: block; margin-left: auto; margin-right: auto"> -->
-        <div class="content has-text-justified">
-          <p style="font-size: 24px;">
-            <br>
-             We choose <a href="https://arxiv.org/abs/2306.11335"><b>SeaWave</b></a>, an open-source benchmark to learn multi-level instruction tasks, 
-             as our experimental platform, and use the corresponding data as demonstration data for imitation learning. 
-             Its greatest advantage is that it provides progressive tasks, facilitating our comprehensive comparison and analysis of the model's capabilities. 
-             It supports 8 skills, including daily operations such as grasping and placing objects, opening and closing doors, and more than 3,000 different instructions. 
-             The SeaWave dataset covers four different levels of language instructions. 
-             We train on this dataset and test on a specially divided test set.  
-             Results are shown in the below.
-          </p>
-          <div class="columns is-centered">
-             <img id="table1" width="70%" src="static/images/table1.png" style="display: block; margin-left: auto; margin-right: auto">
-          </div>
-          <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-            <div style="flex: 1; margin: 0.5%; text-align: center;">
-              <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -1%;">
-                <source src="static/videos/level1.mp4" type="video/mp4">
-              </video>
-              <p style="font-size: 20px;">Pick up Bernachon.</p>
-            </div>
-            <div style="flex: 1; margin: 0.5%; text-align: center;">
-              <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -0.5%;">
-                <source src="static/videos/level2.mp4" type="video/mp4">
-              </video>
-              <p style="font-size: 20px;">Give me the yogurt.</p>
-            </div>
-            <div style="flex: 1; margin: 0.5%; text-align: center;">
-              <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: 0.5%;">
-                <source src="static/videos/level3.mp4" type="video/mp4">
-              </video>
-              <p style="font-size: 20px;">I'm thirsty, can you use a cup to pour the red-packaged drink for me?</p>
-            </div>
-            <div style="flex: 1; margin: 0.5%; text-align: center;">
-              <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: 0.5%;">
-                <source src="static/videos/level4.mp4" type="video/mp4">
-              </video>
-              <p style="font-size: 20px;">The drink in the lower right corner looks good. Can I have it?</p>
-            </div>
-          </div>
-          <br>
-          <div class="columns has-text-centered">
-          <p style="font-size: 24px;">
-            <br>
-            We also perform experiments in different unseen scenarios on level 2, 3, and 4 tasks.
-            New scenarios include unseen backgrounds (<i>i.e.</i>, two unseen tables), changing light intensity, and more distractions (<i>i.e.</i>, more objects).
-            The results are shown in the below. 
-          </p>
-          <br>
-          </div>
-          <div class="columns">
-            <img id="table2" width="70%" src="static/images/table2.png" style="display: block; margin-left: auto; margin-right: auto">
-          </div>
-          <div class="columns is-centered has-text-centered">
-            <div class="container" style="display: flex; justify-content: center; flex-wrap: nowrap;">
-              <div style="flex: 1; margin-right: 2%;">
-                <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -1%;">
-                  <source src="static/videos/background.mp4" type="video/mp4">
-                </video>
-                <p style="font-size: 20px;">Changed Background</p>
-              </div>
-              <div style="flex: 1; margin-right: 2%;">
-                <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: -0.5%;">
-                  <source src="static/videos/light.mp4" type="video/mp4">
-                </video>
-                <p style="font-size: 20px;">Changed Lights</p>
-              </div>
-              <div style="flex: 1;">
-                <video poster="" autoplay controls muted loop playsinline width="100%" style="border-radius: 4%; position: relative; left: 0.5%;">
-                  <source src="static/videos/multi_objs.mp4" type="video/mp4">
-                </video>
-                <p style="font-size: 20px;">More Distractors</p>
-              </div>
-            </div>
-          </div>
+        <h2 class="title is-1">Metaworld Experiments</h2>
+        <div class="columns">
+          <img id="table2" width="70%" src="static/images/table1.png" style="display: block; margin-left: auto; margin-right: auto">
+        </div>
+        <div class="columns">
+          <img id="table2" width="70%" src="static/images/table4.png" style="display: block; margin-left: auto; margin-right: auto">
+        </div>
       </div>
     </div>
 </section>
@@ -403,14 +377,9 @@ other methods.
         <h2 class="title is-1">Conclusions</h2>
         <div class="content has-text-justified">
           <p style="font-size: 24px;">
-            We propose PIVOT-R, a primitive-driven waypoint-aware world model.
-            PIVOT-R focuses on the execution of primitive actions. 
-            Predicting key waypoints in the future greatly improves performance. 
-            It has achieved state-of-the-art results on the SeaWave benchmark, and experiments have proven that it has good robustness. 
-            We also use asynchronous hierarchical executors to ensure fast enough execution of the model. 
-            In addition, we demonstrate that PIVOT-R has the potential to complete unseen instructions and tasks under the guidance of a high-level VLM. 
-            Finally, we also demonstrate PIVOT-R's ability to improve performance through human demonstration. 
-            These results illustrate the potential of PIVOT-R.
+            We introduce RoBridge, a novel hierarchical intelligent architecture designed to enhance robotic manipulation by bridging the gap between high-level cognitive planning and low-level physical execution. 
+            The architecture integrates a high-level cognitive planner, an invariant operable representation, and a generalist embodied agent, demonstrating significant advancements in task generalization and execution robustness. 
+            Through extensive experiments, RoBridge has shown superior performance and strong zero-shot generalization capabilities in unknown environments and novel tasks. 
           </p>
         </div>
       </div>
@@ -422,15 +391,8 @@ other methods.
       <div class="column is-four-fifths">
         <h2 class="title" style="text-align: left;">BibTeX</h2>
         <div class="content has-text-justified">
-          <pre><code style="font-size: 24px;">@misc{zhang2024pivotrprimitivedrivenwaypointawareworld,
-            title={PIVOT-R: Primitive-Driven Waypoint-Aware World Model for Robotic Manipulation}, 
-            author={Kaidong Zhang and Pengzhen Ren and Bingqian Lin and Junfan Lin and Shikui Ma and Hang Xu and Xiaodan Liang},
-            year={2024},
-            eprint={2410.10394},
-            archivePrefix={arXiv},
-            primaryClass={cs.RO},
-            url={https://arxiv.org/abs/2410.10394}, 
-      }
+          <pre><code style="font-size: 24px;">
+
           </code></pre>
         </div>
       </div>
