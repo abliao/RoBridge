@@ -1,0 +1,16 @@
+numpy
+matplotlib
+torch
+wandb
+requests
+moviepy==1.0.0
+imageio
+colorlog
+pyquaternion
+tqdm
+mpi4py
+sklearn
+h5py
+ipdb
+scikit-image
+opencv-python

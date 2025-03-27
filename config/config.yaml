@@ -1,0 +1,45 @@
+defaults:
+  - agent@_global_: IL
+
+task: "pick the yellow block and place on the pink paper."
+
+segment_length: 1.0 
+max_steps: 50
+action_scale: 0.01
+check_period: 5
+
+GroundingDINO:
+  cfg: real_world/GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py 
+  checkpoint: real_world/GroundingDINO/groundingdino_swint_ogc.pth
+  default_prompt: "Robotic gripper. "
+  box_threshold: 0.35
+  text_threshold: 0.25
+
+env:
+  num_frames: 2
+  width: 168
+  height: 168
+  first_view:
+    video_source: 1
+    rotate: true
+    world_matrix:
+      - [0, -1, 0]
+      - [-1, 0, 0]
+      - [0, 0, -1]
+    world_offset:
+      - [0.015, 0.03, 0.125]
+  third_view:
+    video_source: 2
+    rotate: false
+    world_matrix: null
+    world_offset: null
+
+planner:
+  model: gpt-4o
+  temperature: 0.0
+  max_tokens: 2048
+
+
+hydra:
+  job:
+    chdir: false

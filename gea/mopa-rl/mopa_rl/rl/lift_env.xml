@@ -1,0 +1,235 @@
+<mujoco model="base">
+    <compiler angle="radian" meshdir="meshes/" />
+    <option impratio="20" density="1.2" viscosity="2e-05" cone="elliptic" />
+    <size njmax="5000" nconmax="5000" />
+    <visual>
+        <map znear="0.001" />
+    </visual>
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.9 0.9 1" rgb2="0.2 0.3 0.4" width="256" height="1536" />
+        <texture type="2d" name="texplane" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/arenas/../textures/wood-tiles.png" />
+        <texture type="cube" name="tex-ceramic" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/arenas/../textures/ceramic.png" />
+        <texture type="cube" name="tex-steel-brushed" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/arenas/../textures/steel-brushed.png" />
+        <texture type="2d" name="tex-cream-plaster" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/arenas/../textures/cream-plaster.png" />
+        <texture type="cube" name="textable" builtin="flat" rgb1="0.5 0.5 0.5" width="512" height="3072" />
+        <texture type="cube" name="cube_redwood" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/textures/red-wood.png" />
+        <material name="floorplane" texture="texplane" texuniform="true" texrepeat="2 2" specular="0" shininess="0" reflectance="0.01" />
+        <material name="table_ceramic" texture="tex-ceramic" specular="0.2" shininess="0" />
+        <material name="table_legs_metal" texture="tex-steel-brushed" shininess="0.8" reflectance="0.8" />
+        <material name="walls_mat" texture="tex-cream-plaster" texuniform="true" texrepeat="3 3" specular="0.1" shininess="0.1" />
+        <material name="table_mat" texture="textable" />
+        <material name="cube_redwood_mat" texture="cube_redwood" specular="0.4" shininess="0.1" />
+        <mesh name="robot0_base" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/robots/sawyer/meshes/base.stl" />
+        <mesh name="robot0_l0" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/robots/sawyer/meshes/l0.stl" />
+        <mesh name="robot0_head" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/robots/sawyer/meshes/head.stl" />
+        <mesh name="robot0_l1" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/robots/sawyer/meshes/l1.stl" />
+        <mesh name="robot0_l2" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/robots/sawyer/meshes/l2.stl" />
+        <mesh name="robot0_l3" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/robots/sawyer/meshes/l3.stl" />
+        <mesh name="robot0_l4" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/robots/sawyer/meshes/l4.stl" />
+        <mesh name="robot0_l5" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/robots/sawyer/meshes/l5.stl" />
+        <mesh name="robot0_l6" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/robots/sawyer/meshes/l6.stl" />
+        <mesh name="mount0_pedestal" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.stl" />
+        <mesh name="gripper0_electric_gripper_base" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/grippers/meshes/rethink_gripper/electric_gripper_base.stl" />
+        <mesh name="gripper0_standard_narrow" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/grippers/meshes/rethink_gripper/standard_narrow.stl" />
+        <mesh name="gripper0_half_round_tip" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/grippers/meshes/rethink_gripper/half_round_tip.stl" />
+        <mesh name="gripper0_connector_plate" file="/home/tarunc/anaconda3/envs/moparl/lib/python3.8/site-packages/robosuite/models/assets/grippers/meshes/rethink_gripper/connector_plate.stl" />
+    </asset>
+    <worldbody>
+        <geom name="floor" size="3 3 0.125" type="plane" material="floorplane" />
+        <geom name="wall_leftcorner_visual" size="1.06 1.5 0.01" pos="-1.25 2.25 1.5" quat="0.653281 0.653281 0.270598 0.270598" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+        <geom name="wall_rightcorner_visual" size="1.06 1.5 0.01" pos="-1.25 -2.25 1.5" quat="0.653281 0.653281 -0.270598 -0.270598" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+        <geom name="wall_left_visual" size="1.75 1.5 0.01" pos="1.25 3 1.5" quat="0.707107 0.707107 0 0" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+        <geom name="wall_right_visual" size="1.75 1.5 0.01" pos="1.25 -3 1.5" quat="0.707107 -0.707107 0 0" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+        <geom name="wall_rear_visual" size="1.5 1.5 0.01" pos="-2 0 1.5" quat="0.5 0.5 0.5 0.5" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+        <geom name="wall_front_visual" size="3 1.5 0.01" pos="3 0 1.5" quat="0.5 0.5 -0.5 -0.5" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+        <camera name="frontview" pos="1.6 0 1.45" quat="0.56 0.43 0.43 0.56" />
+        <camera name="birdview" pos="-0.2 0 3" quat="0.7071 0 0 0.7071" />
+        <camera name="agentview" pos="0.5 0 1.35" quat="0.653 0.271 0.271 0.653" />
+        <camera name="sideview" pos="-0.0565177 1.27612 1.48796" quat="0.00990507 0.00687796 0.591223 0.806418" />
+        <light name="light1" pos="1 1 4" dir="0 -0.14834 -0.988936" castshadow="false" diffuse="0.8 0.8 0.8" />
+        <light name="light2" pos="-3 -3 4" dir="0 -0.14834 -0.988936" castshadow="false" diffuse="0.8 0.8 0.8" />
+        <body name="table" pos="0 0 0.775">
+            <inertial pos="0 0 0" mass="32" diaginertia="1.71333 1.71333 3.41333" />
+            <geom name="table_collision" size="0.4 0.4 0.025" type="box" rgba="0.5 0.5 0 1" />
+            <geom name="table_visual" size="0.4 0.4 0.025" type="box" contype="0" conaffinity="0" group="1" material="table_ceramic" />
+            <geom name="table_leg1_visual" size="0.025 0.3875" pos="0.3 0.3 -0.3875" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+            <geom name="table_leg2_visual" size="0.025 0.3875" pos="-0.3 0.3 -0.3875" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+            <geom name="table_leg3_visual" size="0.025 0.3875" pos="-0.3 -0.3 -0.3875" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+            <geom name="table_leg4_visual" size="0.025 0.3875" pos="0.3 -0.3 -0.3875" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+            <site name="table_top" pos="0 0 0.025" size="0.001" rgba="0 0 0 0" />
+        </body>
+        <body name="robot0_base" pos="-0.56 0 0.912">
+            <inertial pos="0 0 0" mass="0" diaginertia="0 0 0" />
+            <camera name="robot0_robotview" pos="1 0 0.4" quat="0.653 0.271 0.271 0.653" />
+            <body name="robot0_right_arm_base_link" pos="0 0 0">
+                <inertial pos="-0.0006241 -2.8025e-05 0.065404" quat="-0.209285 0.674441 0.227335 0.670558" mass="2.0687" diaginertia="0.00740351 0.00681776 0.00672942" />
+                <geom name="robot0_base_vis" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.5 0.1 0.1 1" mesh="robot0_base" />
+                <geom name="robot0_base_col" size="0.08 0.12" pos="0 0 0.12" type="cylinder" rgba="0 0.5 0 1" />
+                <body name="robot0_right_l0" pos="0 0 0.08">
+                    <inertial pos="0.024366 0.010969 0.14363" quat="0.894823 0.00899958 -0.170275 0.412573" mass="5.3213" diaginertia="0.0651588 0.0510944 0.0186218" />
+                    <joint name="robot0_right_j0" pos="0 0 0" axis="0 0 1" limited="true" range="-3.0503 3.0503" armature="5" damping="0.1" frictionloss="0.1" />
+                    <geom name="robot0_link0_visual" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.5 0.1 0.1 1" mesh="robot0_l0" />
+                    <geom name="robot0_link0_collision" size="0.07" pos="0.08 0 0.23" rgba="0 0.5 0 1" />
+                    <body name="robot0_head" pos="0 0 0.2965">
+                        <inertial pos="0.0053207 -2.6549e-05 0.1021" quat="0.999993 7.08405e-05 -0.00359857 -0.000626247" mass="1.5795" diaginertia="0.0118334 0.00827089 0.00496574" />
+                        <geom name="robot0_head_visual" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.5 0.1 0.1 1" mesh="robot0_head" />
+                        <geom name="robot0_head_collision" size="0.018" pos="0 0 0.08" rgba="0 0.5 0 1" />
+                        <body name="robot0_screen" pos="0.03 0 0.105" quat="0.5 0.5 0.5 0.5">
+                            <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+                            <geom name="robot0_screen_visual" size="0.12 0.07 0.001" type="box" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" />
+                            <geom name="robot0_screen_collision" size="0.001" rgba="0 0.5 0 1" />
+                        </body>
+                        <body name="robot0_head_camera" pos="0.0228027 0 0.216572" quat="0.342813 -0.618449 0.618449 -0.342813">
+                            <inertial pos="0.0228027 0 0.216572" quat="0.342813 -0.618449 0.618449 -0.342813" mass="0" diaginertia="0 0 0" />
+                        </body>
+                    </body>
+                    <body name="robot0_right_torso_itb" pos="-0.055 0 0.22" quat="0.707107 0 -0.707107 0">
+                        <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+                    </body>
+                    <body name="robot0_right_l1" pos="0.081 0.05 0.237" quat="0.5 -0.5 0.5 0.5">
+                        <inertial pos="-0.0030849 -0.026811 0.092521" quat="0.424888 0.891987 0.132364 -0.0794296" mass="4.505" diaginertia="0.0224339 0.0221624 0.0097097" />
+                        <joint name="robot0_right_j1" pos="0 0 0" axis="0 0 1" limited="true" range="-3.8095 2.2736" armature="2.5" damping="0.1" frictionloss="0.1" />
+                        <geom name="robot0_link1_visual" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.5 0.1 0.1 1" mesh="robot0_l1" />
+                        <geom name="robot0_link1_collision" size="0.07" pos="0 0 0.1225" rgba="0 0.5 0 1" />
+                        <body name="robot0_right_l2" pos="0 -0.14 0.1425" quat="0.707107 0.707107 0 0">
+                            <inertial pos="-0.00016044 -0.014967 0.13582" quat="0.707831 -0.0524761 0.0516007 0.702537" mass="1.745" diaginertia="0.0257928 0.025506 0.00292515" />
+                            <joint name="robot0_right_j2" pos="0 0 0" axis="0 0 1" limited="true" range="-3.0426 3.0426" armature="1.66667" damping="0.1" frictionloss="0.1" />
+                            <geom name="robot0_link2_visual" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.5 0.1 0.1 1" mesh="robot0_l2" />
+                            <geom name="robot0_link2_collision" size="0.06 0.17" pos="0 0 0.08" type="cylinder" rgba="0 0.5 0 1" />
+                            <body name="robot0_right_l3" pos="0 -0.042 0.26" quat="0.707107 -0.707107 0 0">
+                                <inertial pos="-0.0048135 -0.0281 -0.084154" quat="0.902999 0.385391 -0.0880901 0.168247" mass="2.5097" diaginertia="0.0102404 0.0096997 0.00369622" />
+                                <joint name="robot0_right_j3" pos="0 0 0" axis="0 0 1" limited="true" range="-3.0439 3.0439" armature="1.25" damping="0.1" frictionloss="0.1" />
+                                <geom name="robot0_link3_visual" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.5 0.1 0.1 1" mesh="robot0_l3" />
+                                <geom name="robot0_link3_collision" size="0.06" pos="0 -0.01 -0.12" rgba="0 0.5 0 1" />
+                                <body name="robot0_right_l4" pos="0 -0.125 -0.1265" quat="0.707107 0.707107 0 0">
+                                    <inertial pos="-0.0018844 0.0069001 0.1341" quat="0.803612 0.031257 -0.0298334 0.593582" mass="1.1136" diaginertia="0.0136549 0.0135493 0.00127353" />
+                                    <joint name="robot0_right_j4" pos="0 0 0" axis="0 0 1" limited="true" range="-2.9761 2.9761" armature="1" damping="0.1" frictionloss="0.1" />
+                                    <geom name="robot0_link4_visual" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.5 0.1 0.1 1" mesh="robot0_l4" />
+                                    <geom name="robot0_link4_collision" size="0.045 0.15" pos="0 0 0.11" type="cylinder" rgba="0 0.5 0 1" />
+                                    <body name="robot0_right_arm_itb" pos="-0.055 0 0.075" quat="0.707107 0 -0.707107 0">
+                                        <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+                                    </body>
+                                    <body name="robot0_right_l5" pos="0 0.031 0.275" quat="0.707107 -0.707107 0 0">
+                                        <inertial pos="0.0061133 -0.023697 0.076416" quat="0.404076 0.9135 0.0473125 0.00158335" mass="1.5625" diaginertia="0.00474131 0.00422857 0.00190672" />
+                                        <joint name="robot0_right_j5" pos="0 0 0" axis="0 0 1" limited="true" range="-2.9761 2.9761" armature="0.833333" damping="0.2" frictionloss="0.1" />
+                                        <geom name="robot0_link5_visual" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.5 0.1 0.1 1" mesh="robot0_l5" />
+                                        <geom name="robot0_link5_collision" size="0.06" pos="0 0 0.1" rgba="0 0.5 0 1" />
+                                        <body name="robot0_right_hand_camera" pos="0.039552 -0.033 0.0695" quat="0.707107 0 0.707107 0">
+                                            <inertial pos="0.039552 -0.033 0.0695" quat="0.707107 0 0.707107 0" mass="0" diaginertia="0 0 0" />
+                                        </body>
+                                        <body name="robot0_right_wrist" pos="0 0 0.10541" quat="0.707107 0.707107 0 0">
+                                            <inertial pos="0 0 0.10541" quat="0.707107 0.707107 0 0" mass="0" diaginertia="0 0 0" />
+                                        </body>
+                                        <body name="robot0_right_l6" pos="0 -0.11 0.1053" quat="0.0616248 0.06163 -0.704416 0.704416">
+                                            <inertial pos="-8.0726e-06 0.0085838 -0.0049566" quat="0.479044 0.515636 -0.513069 0.491322" mass="0.3292" diaginertia="0.000360258 0.000311068 0.000214974" />
+                                            <joint name="robot0_right_j6" pos="0 0 0" axis="0 0 1" limited="true" range="-4.7124 4.7124" armature="0.714286" damping="0.1" frictionloss="0.1" />
+                                            <geom name="robot0_link6_visual" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.5 0.1 0.1 1" mesh="robot0_l6" />
+                                            <geom name="robot0_link6_collision" size="0.055 0.025" pos="0 0.015 -0.01" type="cylinder" rgba="0 0.5 0 1" />
+                                            <body name="robot0_right_hand" pos="0 0 0.024" quat="0.707105 0 0 0.707108">
+                                                <inertial pos="0 0 0.024" quat="0.707105 0 0 0.707108" mass="0" diaginertia="0 0 0" />
+                                                <site name="robot0_ee" pos="0 0 0" size="0.01" group="1" rgba="0 0 1 -1" />
+                                                <site name="robot0_ee_x" pos="0 0 0" quat="0.707105 0.707108 0 0" size="0.005 0.1" group="1" type="cylinder" rgba="1 0 0 0" />
+                                                <site name="robot0_ee_z" pos="0 0 0" quat="0.707105 0 0 0.707108" size="0.005 0.1" group="1" type="cylinder" rgba="0 0 1 0" />
+                                                <site name="robot0_ee_y" pos="0 0 0" quat="0.707105 0 0.707108 0" size="0.005 0.1" group="1" type="cylinder" rgba="0 1 0 0" />
+                                                <camera name="robot0_eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0" fovy="75" />
+                                                <body name="gripper0_gripper_base" pos="0 0 0">
+                                                    <inertial pos="0 0 0" quat="-0.5 0.5 0.5 0.5" mass="0.3" diaginertia="3e-08 2e-08 2e-08" />
+                                                    <geom name="gripper0_connector_plate" pos="0 0 0.0018" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.499 0.499 0.499 1" mesh="gripper0_connector_plate" />
+                                                    <geom name="gripper0_electric_gripper_base" pos="0 0 0.0194" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.499 0.499 0.499 1" mesh="gripper0_electric_gripper_base" />
+                                                    <geom name="gripper0_gripper_base_col" size="0.029 0.05" pos="0.004 0 0.04" quat="0 0 0.707107 0.707107" type="cylinder" rgba="0 0 0.5 1" />
+                                                    <site name="gripper0_ft_frame" pos="0 0 0" size="0.01" group="1" rgba="1 0 0 -1" />
+                                                    <site name="gripper0_grip_site" pos="0 0 0.109" size="0.01" group="1" rgba="1 0 0 -0.5" />
+                                                    <site name="gripper0_grip_site_cylinder" pos="0 0 0" size="0.005 10" group="1" type="cylinder" rgba="0 1 0 -0.3" />
+                                                    <body name="gripper0_l_finger" pos="0 0.01 0.0444">
+                                                        <inertial pos="0 0 0" quat="0 0 0 -1" mass="0.02" diaginertia="0.01 0.01 0.01" />
+                                                        <joint name="gripper0_l_finger_joint" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="-0.0115 0.020833" armature="1" damping="100" frictionloss="1" />
+                                                        <geom name="gripper0_l_finger" quat="0 0 0 -1" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.499 0.499 0.499 1" mesh="gripper0_standard_narrow" />
+                                                        <geom name="gripper0_l_finger_g0" size="0.005 0.00675 0.0375" pos="0 0.01725 0.04" quat="0 0 0 -1" type="box" contype="0" friction="0 0 0" rgba="0 0 0.5 1" />
+                                                        <geom name="gripper0_l_finger_g1" size="0.005 0.025 0.0085" pos="-0.005 -0.003 0.0083" quat="0 0 0 -1" type="box" contype="0" friction="0 0 0" rgba="0 0 0.5 1" />
+                                                        <body name="gripper0_l_finger_tip" pos="0 0.01725 0.075">
+                                                            <inertial pos="0 0 0" quat="0 0 0 1" mass="0.01" diaginertia="0.01 0.01 0.01" />
+                                                            <geom name="gripper0_l_fingertip_g0_vis" quat="0 0 0 1" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.499 0.499 0.499 1" mesh="gripper0_half_round_tip" />
+                                                            <geom name="gripper0_l_fingertip_g0" size="0.004 0.004 0.0185" pos="0 -0.0045 -0.015" quat="0 0 0 -1" type="box" contype="0" friction="0 0 0" rgba="0 0 0.5 1" />
+                                                            <geom name="gripper0_l_fingerpad_g0" size="0.0035 0.004 0.0165" pos="0 -0.0047 -0.017" type="box" contype="0" friction="0 0 0" rgba="0 0 0.5 1" />
+                                                        </body>
+                                                    </body>
+                                                    <body name="gripper0_r_finger" pos="0 -0.01 0.0444">
+                                                        <inertial pos="0 0 0" mass="0.02" diaginertia="0.01 0.01 0.01" />
+                                                        <joint name="gripper0_r_finger_joint" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="-0.020833 0.0115" armature="1" damping="100" frictionloss="1" />
+                                                        <geom name="gripper0_r_finger" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.499 0.499 0.499 1" mesh="gripper0_standard_narrow" />
+                                                        <geom name="gripper0_r_finger_g0" size="0.005 0.00675 0.0375" pos="0 -0.01725 0.04" type="box" contype="0" friction="0 0 0" rgba="0 0 0.5 1" />
+                                                        <geom name="gripper0_r_finger_g1" size="0.005 0.025 0.0085" pos="0.005 0.003 0.0083" type="box" contype="0" friction="0 0 0" rgba="0 0 0.5 1" />
+                                                        <body name="gripper0_r_finger_tip" pos="0 -0.01725 0.075">
+                                                            <inertial pos="0 0 0" mass="0.01" diaginertia="0.01 0.01 0.01" />
+                                                            <geom name="gripper0_r_fingertip_g0_vis" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.499 0.499 0.499 1" mesh="gripper0_half_round_tip" />
+                                                            <geom name="gripper0_r_fingertip_g0" size="0.004 0.004 0.0185" pos="0 0.0045 -0.015" type="box" contype="0" friction="0 0 0" rgba="0 0 0.5 1" />
+                                                            <geom name="gripper0_r_fingerpad_g0" size="0.0035 0.004 0.0165" pos="0 0.0047 -0.017" type="box" contype="0" friction="0 0 0" rgba="0 0 0.5 1" />
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                    </body>
+                                    <body name="robot0_right_l4_2" pos="0 0 0">
+                                        <inertial pos="1e-08 1e-08 1e-08" quat="0.820473 0.339851 -0.17592 0.424708" mass="1e-08" diaginertia="1e-08 1e-08 1e-08" />
+                                        <geom name="robot0_right_l4_2" size="0.06" pos="0 0.01 0.26" rgba="0 0.5 0 1" />
+                                    </body>
+                                </body>
+                            </body>
+                            <body name="robot0_right_l2_2" pos="0 0 0">
+                                <inertial pos="1e-08 1e-08 1e-08" quat="0.820473 0.339851 -0.17592 0.424708" mass="1e-08" diaginertia="1e-08 1e-08 1e-08" />
+                                <geom name="robot0_right_l2_2" size="0.06" pos="0 0 0.26" rgba="0 0.5 0 1" />
+                            </body>
+                        </body>
+                        <body name="robot0_right_l1_2" pos="0 0 0">
+                            <inertial pos="1e-08 1e-08 1e-08" quat="0.820473 0.339851 -0.17592 0.424708" mass="1e-08" diaginertia="1e-08 1e-08 1e-08" />
+                            <geom name="robot0_right_l1_2" size="0.07 0.07" pos="0 0 0.035" type="cylinder" rgba="0 0.5 0 1" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <body name="mount0_base" pos="0 0 0.01">
+                <inertial pos="0 0 0.01" mass="0" diaginertia="0 0 0" />
+                <body name="mount0_controller_box" pos="0 0 0">
+                    <inertial pos="-0.325 0 -0.38" mass="46.64" diaginertia="1.71363 1.27988 0.809981" />
+                    <geom name="mount0_controller_box_col" size="0.11 0.2 0.265" pos="-0.325 0 -0.38" type="box" rgba="0.5 0.5 0 1" />
+                </body>
+                <body name="mount0_pedestal_feet" pos="0 0 0">
+                    <inertial pos="-0.1225 0 -0.758" mass="167.09" diaginertia="8.16095 9.59375 15.0785" />
+                    <geom name="mount0_pedestal_feet_col" size="0.385 0.35 0.155" pos="-0.1225 0 -0.758" type="box" rgba="0.5 0.5 0 1" />
+                </body>
+                <body name="mount0_torso" pos="0 0 0">
+                    <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+                    <geom name="mount0_torso_vis" size="0.05 0.05 0.05" pos="0 0 -0.05" type="box" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" />
+                </body>
+                <body name="mount0_pedestal" pos="0 0 0">
+                    <inertial pos="0 0 0" quat="0.659267 -0.259505 -0.260945 0.655692" mass="60.864" diaginertia="6.0869 5.81635 4.20915" />
+                    <geom name="mount0_pedestal_vis" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" mesh="mount0_pedestal" />
+                    <geom name="mount0_pedestal_col" size="0.18 0.31" pos="-0.02 0 -0.29" type="cylinder" rgba="0.5 0.5 0 1" />
+                </body>
+            </body>
+        </body>
+        <body name="cube_main" pos="0 0 0">
+            <inertial pos="0 0 0" mass="0.0738297" diaginertia="2.23369e-05 2.09122e-05 2.18121e-05" />
+            <joint name="cube_joint0" type="free" />
+            <geom name="cube_g0" size="0.0203522 0.0217279 0.0208695" type="box" rgba="0.5 0 0 1" />
+            <geom name="cube_g0_vis" size="0.0203522 0.0217279 0.0208695" type="box" contype="0" conaffinity="0" group="1" material="cube_redwood_mat" />
+            <site name="cube_default_site" pos="0 0 0" size="0.002" rgba="1 0 0 -1" />
+        </body>
+    </worldbody>
+    <actuator>
+        <general name="robot0_torq_right_j0" joint="robot0_right_j0" ctrllimited="true" ctrlrange="-80 80" />
+        <general name="robot0_torq_right_j1" joint="robot0_right_j1" ctrllimited="true" ctrlrange="-80 80" />
+        <general name="robot0_torq_right_j2" joint="robot0_right_j2" ctrllimited="true" ctrlrange="-40 40" />
+        <general name="robot0_torq_right_j3" joint="robot0_right_j3" ctrllimited="true" ctrlrange="-40 40" />
+        <general name="robot0_torq_right_j4" joint="robot0_right_j4" ctrllimited="true" ctrlrange="-9 9" />
+        <general name="robot0_torq_right_j5" joint="robot0_right_j5" ctrllimited="true" ctrlrange="-9 9" />
+        <general name="robot0_torq_right_j6" joint="robot0_right_j6" ctrllimited="true" ctrlrange="-9 9" />
+        <general name="gripper0_gripper_r_finger_joint" joint="gripper0_r_finger_joint" ctrllimited="true" forcelimited="true" ctrlrange="-0.0115 0.020833" forcerange="-20 20" biastype="affine" gainprm="1000 0 0 0 0 0 0 0 0 0" biasprm="0 -1000 0 0 0 0 0 0 0 0" />
+        <general name="gripper0_gripper_l_finger_joint" joint="gripper0_l_finger_joint" ctrllimited="true" forcelimited="true" ctrlrange="-0.020833 0.0115" forcerange="-20 20" biastype="affine" gainprm="1000 0 0 0 0 0 0 0 0 0" biasprm="0 -1000 0 0 0 0 0 0 0 0" />
+    </actuator>
+    <sensor>
+        <force site="gripper0_ft_frame" name="gripper0_force_ee" />
+        <torque site="gripper0_ft_frame" name="gripper0_torque_ee" />
+    </sensor>
+</mujoco>

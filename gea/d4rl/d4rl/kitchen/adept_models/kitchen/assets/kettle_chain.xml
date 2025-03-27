@@ -1,0 +1,22 @@
+<mujocoinclude>
+
+    <body name="kettleroot" childclass="kettle">
+        <geom mesh="kettle"/>
+        <geom material="kettle_wood" name='kettletop' euler="0 1.57 0" pos="0 0 0.259" size="0.032 0.1" type="capsule"/>
+        <geom material="kettle_wood" name='kettle1' euler="0 1.57 0" pos="0 0 0.13" size="0.011" type="sphere"/>
+        <geom euler="0 1.57 0" name='kettle2' pos="0 0 0.259" size="0.02 0.115" type="capsule"/>
+        <geom pos="0.092 0 0.186" name='kettle' size="0.02 0.07" type="capsule"/>
+        <geom pos="-0.092 0 0.185" name='kettlehandle' size="0.02 0.07" type="capsule"/>
+        <geom material="kettle_wood" name='kettle3' pos="-0.092 0 0.22" size="0.022 0.015" type="capsule"/>
+        <geom material="kettle_wood" name='kettle5' pos="0.092 0 0.22" size="0.022 0.015" type="capsule"/>
+
+        <geom class="kettle_collision" name='kettle6' euler="0 1.57 0" pos="0 0 0.259" size="0.032 0.1" type="capsule" mass='.02'/>
+        <geom class="kettle_collision" name='kettle7' pos="0.092 0 0.18" size="0.023 0.06" type="capsule" mass='.02'/>
+        <geom class="kettle_collision" name='kettle8' pos="-0.092 0 0.18" size="0.023 0.06" type="capsule" mass='.02'/>
+        <geom class="kettle_collision" name='kettle9' euler="0 2.25 0" pos="-0.126 0 0.07" size="0.031 0.05" type="cylinder" mass='.02'/>
+        <geom class="kettle_collision" name='kettle10' pos="0 0 0.058" size="0.122 0.122 0.058" type="box" mass='.8'/>
+        <site name="khandle1" pos="-.09 0 0.2" rgba="0 0 1 0" size=".025"/>
+        <site name="khandle2" pos=".095 0 0.2" rgba="0 0 1 0" size=".025"/>
+        <site type="sphere" name="kettle_site" pos="0 0 0.259" size=".01" group="3" rgba="0 0 0 1"/>
+    </body>
+</mujocoinclude>

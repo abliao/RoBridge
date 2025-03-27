@@ -1,0 +1,1 @@
+python -m rl.motion_planning_all

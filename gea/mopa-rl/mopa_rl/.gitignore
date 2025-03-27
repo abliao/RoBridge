@@ -1,0 +1,73 @@
+# Mac OS
+.DS_Store
+*~
+.python-version
+
+# Log
+log
+logs
+
+# Vim
+.*.s[a-w][a-z]
+Session.vim
+
+# Data
+*.csv
+*.ini
+*.npy
+*.zip
+*screenlog*
+
+# Mujoco
+MUJOCO_LOG.TXT
+
+# Python
+## Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+## C extensions
+#*.so
+
+## Distribution / packaging
+.Python
+build/
+*.egg-info/
+.installed.cfg
+*.egg
+
+## Jupyter Notebook
+.ipynb_checkpoints
+**/*.ipynb
+
+## virtualenv
+.venv
+venv/
+
+## Rope project settings
+.ropeproject
+
+## Wandb
+wandb/
+
+## PyCharm
+.idea/
+
+## VSCode
+.vscode/
+
+## flake8
+.flake8
+z.vid
+z.log.global
+test_logs
+tmp
+
+## Eigen
+eigen-3.3.7/
+
+motion_planners/*.so
+./result
+./plot
+# env/assets/xml/sawyer*

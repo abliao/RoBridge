@@ -1,0 +1,40 @@
+agent:
+  obs_shape: ??? # to be specified later
+  action_shape: ??? # to be specified later
+  device: cuda
+  lr: 0.0001
+  use_tb: false
+  critic_target_tau: 0.01
+  update_every_steps: 2
+  num_expl_steps: 2000
+  hidden_dim: 1024
+  feature_dim: 50
+  stddev_schedule: 'linear(1.0,0.1,500000)'
+  stddev_clip: 0.3
+  added_encode_modal:
+    encode_modal:
+      # - "task"
+      - "action"
+      - "orientation"
+      # - "gripper_state"
+      # - "obj_state"
+      # - "diff_state"
+    num_tasks: 50
+    num_actions: 9
+    num_states: 7
+    num_orientation: 3
+    num_gripper_state: 3
+    num_obj_state: 3
+    num_diff_state: 3
+    action_dim: 400
+    task_dim: 400
+    state_dim: 400
+    orientation_dim: 400
+  data_aug: true
+  depth: True
+  dino: False
+  only_act: false
+
+pretrain:
+    path: 
+    just_encoder_decoders: false

@@ -1,0 +1,9 @@
+defaults:
+  - common
+  - _self_
+
+agent:
+  _target_: gea.agents.IL.ILAgent
+  use_pool_encoder: false
+  update_every_steps: 1
+  pool_encoder_latent_dim: 512 # Only used if use_pool_encoder is set to true

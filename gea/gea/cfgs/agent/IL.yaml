@@ -1,0 +1,35 @@
+defaults:
+  - common
+  - _self_
+
+agent:
+  _target_: gea.agents.IL.ILAgent
+  use_pool_encoder: false
+  update_every_steps: 1
+  pool_encoder_latent_dim: 512 # Only used if use_pool_encoder is set to true
+  use_depth_handler: true
+  depth_handler:
+    augmentation:
+      depth_warping:
+        enabled: True
+        prob: 0.8
+        std: 0.5
+      gaussian_blur:
+        enabled: False
+        kernel_size: 5
+        sigma_lower: 0.01
+        sigma_upper: 1.0
+      scale:
+        enabled: False
+        intensity: 0.05
+        prob: 0.4
+      holes:
+        enabled: True
+        prob: 0.5
+        kernel_size_lower: 3
+        kernel_size_upper: 27
+        sigma_lower: 1.0
+        sigma_upper: 7.0
+        thresh_lower: 0.6
+        thresh_upper: 0.9
+        fill_value: 1.0
