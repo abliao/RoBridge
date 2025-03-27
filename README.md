@@ -60,7 +60,14 @@ python real_world/main.py --task "put task here"
 ### Note for Real World Deployment
 We use a kinova Gen3 robot and two D435i cameras. It is recommended that the closer the camera's pose is to the one in the simulation, the better the effect. Please set the camera's coordinate system in `config/config.yaml`.
 
-
+## Known Issues
+If you have problems compiling the metaworld environment, try running
+```
+sudo apt-get install build-essential
+sudo apt-get install build-essential libgl1-mesa-dev
+sudo apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev
+sudo apt-get install libglfw3-dev libglfw3
+```
 
 ## Citation
 If you find this code useful in your work, please consider citing

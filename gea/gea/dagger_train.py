@@ -195,7 +195,7 @@ def main(cfg):
             self.experts = {}
             from cfgs.env_ids import env_name2id
             for env_name in env_name2id.keys():
-                self.cfg.pretrain.path = f'/mnt/data/xurongtao/zhangkaidong/psl/expert_local/metaworld_{env_name}/latest.pt'
+                self.cfg.pretrain.path = f'expert_local/metaworld_{env_name}/latest.pt'
                 agent = make_agent(
                     self.train_env.observation_spec(),
                     self.train_env.action_spec(),

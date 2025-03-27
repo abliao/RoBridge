@@ -8,7 +8,7 @@ rm ~/.mujoco/mujoco.zip
 wget https://github.com/google-deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz -O ~/.mujoco/mujoco.tar.gz
 tar -xvf ~/.mujoco/mujoco.tar.gz -C ~/.mujoco/
 wget https://www.roboti.us/file/mjkey.txt -O ~/.mujoco/mjkey.txt
-eval "$(conda shell.bash hook)"
+pip install lockfile
 pip install -e d4rl/
 pip install -e mjrl/
 pip install -e metaworld/
@@ -36,3 +36,4 @@ pip install open3d
 pip install plantcv
 pip install urdfpy
 pip install opencv-python pycocotools matplotlib onnxruntime onnx ipykernel
+pip install -e .

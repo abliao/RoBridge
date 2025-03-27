@@ -3,6 +3,7 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 import random
+import pickle
 import numpy as np
 import time
 import torch
@@ -235,6 +236,8 @@ class DrQV2Agent:
         else:
             print("Loading entire agent")
 
+        import sys
+        sys.modules['planseqlearn'] = sys.modules['gea']
         payload = torch.load(pretrain_path, map_location="cpu")
         pretrained_agent = payload["agent"]
 
