@@ -236,6 +236,7 @@ class ILAgent:
 
         # optimizers
         self.encoder_opt = torch.optim.Adam(self.encoder.parameters(), lr=lr)
+        self.modal_encoder_opt = torch.optim.Adam(self.modal_encoder.parameters(), lr=lr)
         self.actor_opt = torch.optim.Adam(self.actor.parameters(), lr=lr)
 
         # data augmentation
@@ -312,8 +313,12 @@ class ILAgent:
 
         # optimize actor
         self.actor_opt.zero_grad(set_to_none=True)
+        self.modal_encoder_opt.zero_grad(set_to_none=True)
+        self.actor_opt.zero_grad(set_to_none=True)
         actor_loss.backward()
         self.actor_opt.step()
+        self.encoder_opt.step()
+        self.modal_encoder_opt.step()
 
         if self.use_tb:
             metrics["actor_loss"] = actor_loss.item()
@@ -368,7 +373,7 @@ class ILAgent:
             metrics["batch_reward"] = reward.mean().item()
 
         # update actor
-        metrics.update(self.update_actor(encoded_obs.detach(), step, action))
+        metrics.update(self.update_actor(encoded_obs, step, action))
 
         return metrics
 
