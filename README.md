@@ -2,7 +2,7 @@
 This repo contains code for the paper:
 ### RoBridge: A Hierarchical Architecture Bridging Cognition and Execution for General Robotic Manipulation ###
 
-[Project Website](https://abliao.github.io/RoBridge/) || [Arxiv]()
+[Project Website](https://abliao.github.io/RoBridge/) || [Arxiv](https://arxiv.org/abs/2505.01709)
 
 <p align="center">
 <img src="imgs/framework_00.png" height=400px alt="Overview">
@@ -72,7 +72,15 @@ sudo apt-get install libglfw3-dev libglfw3
 ## Citation
 If you find this code useful in your work, please consider citing
 ```shell
-
+@misc{zhang2025robridgehierarchicalarchitecturebridging,
+      title={RoBridge: A Hierarchical Architecture Bridging Cognition and Execution for General Robotic Manipulation}, 
+      author={Kaidong Zhang and Rongtao Xu and Pengzhen Ren and Junfan Lin and Hefeng Wu and Liang Lin and Xiaodan Liang},
+      year={2025},
+      eprint={2505.01709},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2505.01709}, 
+}
 ```
 
 ## Acknowledgements
